@@ -1,0 +1,259 @@
+/*
+Website: SoundShare.netlify.app
+Author: Tymo Verhaegen
+Version: 1.0
+Description: Music sharing website, made for educational purpose
+ */
+
+/* COLOR CODES
+    #6B6E70 LIGHT GRAY
+    #474B4F DARKER GRAY
+    #222629 DARK GRAY
+    #86C232 LIME
+    #61892F DARK GREEN
+*/
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
+
+* {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.content {
+    min-height: calc(100vh - 70px);
+}
+
+svg {
+    color: #03C0C1;
+}
+
+/* BODY */
+body {
+    background: #fff;
+    min-height: 100vh;
+}
+
+/* NAV */
+.navbar {
+    background-color: #222629;
+}
+
+li {
+    list-style-type: none;
+}
+
+li > a {
+    color: #03C0C1;
+    text-decoration: none;
+    position: relative;
+}
+
+a {
+    margin: 5px;
+    padding: 2px;
+    transition: 0.5s ease;
+}
+
+a:hover {
+    color: #03C0C1;
+    transform: scale(1.010);
+}
+
+i {
+    color: #03C0C1;
+}
+
+.container-search {
+    display: block;
+}
+
+.btn {
+    color: #016B6B;
+    background-color: #fff;
+}
+
+.btn:hover {
+    color: #03C0C1;
+}
+
+.parallax {
+    background-image: linear-gradient(rgba(34, 38, 41, 0.2), rgba(34, 38, 41, 0.2)),
+    url("../IMG & SVG/studio_good.jpg");
+    min-height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+
+/* INTRO */
+.intro {
+    color: white;
+    padding: 20px;
+}
+
+/* CARDS */
+.cards {
+    background-color: #fefefe;
+}
+
+.card {
+    transition: 0.5s ease;
+    background-color: #fff;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.placeholder {
+    width: 300px;
+    height: auto;
+}
+
+.cardLink, .cardLink:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+
+footer {
+    background-color: #222629;
+    padding: 25px;
+    color: #fff;
+}
+
+.contact {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.contact a {
+    padding: 0;
+    margin-right: 20px;
+}
+
+
+@media only screen and (max-width: 400px) {
+    i {
+        display: none !important;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .form-modal {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    li {
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+
+    li > a::after {
+        content: "";
+        display: block;
+        margin: auto;
+        height: 1px;
+        width: 0;
+        top: 5px;
+        background: transparent;
+        transition: all 0.3s;
+
+    }
+
+    li > a:hover::after, li > a.active-nav::after {
+        width: 100%;
+        background: #03C0C1;
+    }
+
+    .parallax {
+        min-height: 500px;
+    }
+
+    /* SEARCH */
+    .container-search {
+        display: block;
+        width: 350px;
+        height: auto;
+        background-color: #222629;
+        border-radius: 5px;
+        padding: 10px;
+        position: absolute;
+        top: 100%;
+        left: 35%;
+    }
+
+    .fade-up {
+        opacity: 0;
+        transform: translate3d(0, 5rem, 0);
+        transition: transform 0.8s cubic-bezier(.64, .04, .26, .87),
+        opacity 0.8s cubic-bezier(.64, .04, .26, .87);
+    }
+
+    .fade-up.faded {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .container-search i {
+        display: flex;
+        position: relative;
+    }
+
+    .search__box {
+        float: left;
+        opacity: 1;
+        width: 0;
+        height: 3rem;
+        background: none;
+        color: white;
+        font-size: 1.5rem;
+        border-radius: 2rem;
+        outline: none;
+        border: none;
+        position: relative;
+        transition: all .4s ease-in;
+        cursor: pointer;
+    }
+
+
+    .search__icon {
+        opacity: 1;
+        box-sizing: border-box;
+        font-size: 1.75rem;
+        margin-left: .8rem;
+        margin-top: 0;
+        cursor: pointer;
+        color: #03C0C1;
+        transition: all .2s ease-in;
+        padding: .7rem;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .container-search:hover > .search__box {
+        width: 85%;
+        padding: 0 1rem;
+    }
+
+    .container-search:hover > .search__icon {
+        opacity: 1;
+    }
+
+    .show {
+        width: 85%;
+    }
+
+
+}
